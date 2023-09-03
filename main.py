@@ -29,7 +29,7 @@ def get_db():
         print(err)
         return None
 
-@app.get("/search_product/{barcode}")
+@app.get("/search_product/{barcode}") # {barcode}はパスパラメータ
 def search_product(barcode: int):
     # データベースに接続
     conn = get_db()
@@ -39,7 +39,7 @@ def search_product(barcode: int):
     cursor = conn.cursor()
 
     # SQLクエリを実行して商品情報を取得
-    cursor.execute(f"SELECT PRD_NAME, PRD_PRICE FROM m_product WHERE PRD_CD = {barcode}") # m_productは商品マスタテーブル名
+    cursor.execute(f"SELECT PRD_NAME, PRD_PRICE FROM p_info WHERE PRD_CD = {barcode}") # m_productは商品マスタテーブル名
     result = cursor.fetchone()
 
     # データベース接続を閉じる
