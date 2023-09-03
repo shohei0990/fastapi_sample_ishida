@@ -1,8 +1,16 @@
+import os
 from fastapi import FastAPI
 import mysql.connector
 from mysql.connector import errorcode
 
 app = FastAPI()
+
+# 環境変数から設定を読み込む
+host = os.environ.get("DB_HOST", "default_host")
+user = os.environ.get("DB_USER", "default_user")
+password = os.environ.get("DB_PASSWORD", "default_password")
+database = os.environ.get("DB_DATABASE", "default_database")
+
 
 # Azure MySQLデータベースへの接続情報
 config = {
