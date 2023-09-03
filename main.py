@@ -14,10 +14,10 @@ database = os.environ.get("DB_DATABASE", "default_database")
 
 # Azure MySQLデータベースへの接続情報
 config = {
-  'host':'', # :サーバー名:Azure MySQLサーバーのホスト名 ●●.com
-  'user':'', # サーバー管理者ログイン名
-  'password':'', # サーバー管理者ログインパスワード
-  'database':'barcodedb' # データベース名
+  'host': host,
+  'user': user,
+  'password': password,
+  'database': database
 }
 
 # データベースに接続
