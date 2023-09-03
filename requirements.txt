@@ -1,8 +1,2 @@
 fastapi
-pydantic
 mysql-connector-python
-mysql
-SQLAlchemy==1.4.39
-python-dotenv
-uvicorn==0.18.2
-PyMySQL==1.0.2
