@@ -2,8 +2,18 @@ import os
 from fastapi import FastAPI
 import mysql.connector
 from mysql.connector import errorcode
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+# CORSミドルウェアの設定
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # 本番環境では "*" ではなく、適切なオリジンを設定してください。
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # 環境変数から設定を読み込む
 host = os.environ.get("DB_HOST", "default_host")
